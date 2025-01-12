@@ -1,4 +1,4 @@
-**Node Express TypeScript Setup**
+## Node Express TypeScript Setup
 - `npm init -y`
 - If using volta `volta pin node@22.12.0`
 - `npm i -D typescript`
@@ -16,3 +16,27 @@
 - **Start Script**: `node ./dist/index.js`
 - **Dev Script**: `tsc && nodemon ./dist/index.js`
 - Add `.gitignore` with `.env` and `node_modules` hidden.
+
+## Prisma Setup with Postgres
+ 
+### First, install the required dependencies:
+- `npm install @prisma/client`
+- `npm i -D prisma`
+- `npx prisma init --datasource-provider postgresql` 
+  - This will create a `prisma` folder with a file `schema.prisma`
+  - This will also create a `.env` file with `DATABASE_URL` property.
+
+### Creata a Database using POSTGRESQL
+
+### Update .env
+- `DATABASE_URL="postgresql://user:password@localhost:5432/your_database_name"`
+- Replace user, password, and your_database_name with your actual database credentials.
+
+### Create schema in `schema.prisma`
+
+
+### Generate the Prisma client
+- `npx prisma generate`
+
+### Create and apply first migration
+- `npx prisma migrate dev --name init`
