@@ -1,0 +1,1 @@
+- We can only have one data source in schema.prisma, It must have a provider and url
